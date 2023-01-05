@@ -5,7 +5,7 @@
   get the value of the variable pointed to by the pointer and 
   also how to print the address of a varable address using %p
   operator
-  /
+  */
 
 
 int main(void)
