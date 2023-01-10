@@ -24,7 +24,7 @@ int main()
 
 			        salaryhike(&salary, bonus);
 
-				    printf("Final salary: %d", salary);
+				    printf("Final salary: %d\n", salary);
 
 				        return 0;
 
