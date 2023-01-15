@@ -15,7 +15,8 @@ int main(int argc, char *argv[])
 	printf("I have an initial %c. \n", initial);
 	printf("I have a first name %s. \n", first_name);
 	printf("I have a last name %s. \n", last_name);
-	printf("My whole name is %s .%c. %s. \n", first_name, initial, last_name);
+	printf("My whole name is %c. %s %s. \n", initial, first_name, last_name);
+	printf("This is a space " " test using double quote within printf \n");
 
 	return 0;
 
