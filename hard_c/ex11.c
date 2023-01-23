@@ -3,11 +3,13 @@
 int main(int agrc, char *argv[])
 {
 	//go through each string in argv
-
+	
+	int argc = 0;
+	
 	int i = 0;
 	while(i < argc)
 	{
-		printf("arg %d: %s\n", i, argv[]
+		printf("arg %d: %s\n", i, argv[i]);
 				i++;
 	}
 
@@ -19,8 +21,9 @@ int main(int agrc, char *argv[])
 	i = 0; //watch for this
 	while(i < num_states)
 	{
-		printf("stae %d: %s\n", states[i]
+		printf("state %d: %s\n", i, states[i]);
+		i++;
 
 	}
-	return 0;`
+	return 0;
 }
