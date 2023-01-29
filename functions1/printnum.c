@@ -1,11 +1,10 @@
-#include "main.h"
 #include <stdio.h>
 
 void print_numbers(void)
 {
-	int i;
-	for (i = '0'; i <= '9'; i++)
-		putchar(i+ 0);
+	int r;
+	for (r = '0'; r <= '9'; r++)
+		putchar(r+ 0);
 		putchar('\n');
 
 
