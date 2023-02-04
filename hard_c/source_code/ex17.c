@@ -15,7 +15,7 @@ struct Address {
 };
 
 struct Database {
-  struct Adress rows[MAX-ROWS];
+  struct Address rows[MAX_ROWS];
 };
 
 struct Connection {
@@ -28,7 +28,7 @@ void die(const char *message)
   if(errno) {
     perror(message);
   } else {
-    printf("ERROR: %s\n, message");
+    printf("ERROR: %s\n", message);
   }
 
   exit(1);
@@ -90,9 +90,9 @@ void Database_create(struct Connection *conn)
 {
     int i = 0;
 
-    for(i = 0; i < MAX_ROWs; i++) {
+    for(i = 0; i < MAX_ROWS; i++) {
       // make a prototype to initialize it
-      struct Address addr = {.id = i, set = 0};
+      struct Address addr = {.id = i, .set = 0};
       // then just assign it
       conn->db->rows[i] = addr;
     }
@@ -110,10 +110,10 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
     if(!res) die("Name copy failed");
 
     res = strncpy(addr->email, email, MAX_DATA);
-    if(!res) die("email copy failed");
+    if(!res) die("Email copy failed");
 }
 
-void Database_get(struct Connection *conn, int id))
+void Database_get(struct Connection *conn, int id)
 {
     struct Address *addr = &conn->db->rows[id];
 
@@ -138,7 +138,7 @@ void Database_list(struct Connection *conn)
   for(i = 0; i < MAX_ROWS; i++) {
     struct Address *cur = &db->rows[i];
 
-    if(curr->set) {
+    if(cur->set) {
       Address_print(cur);
     }
   }
@@ -148,7 +148,7 @@ int main(int argc, char *argv[])
 {
   if(argc < 3) die("USAGE: ex17 <dbfile> <action> [action params]");
 
-  char *filename + argv[1];
+  char *filename = argv[1];
   char action = argv[2][0];
   struct Connection *conn = Database_open(filename, action);
   int id = 0;
@@ -158,7 +158,7 @@ int main(int argc, char *argv[])
 
   switch(action) {
   case 'c':
-    Database_creae(conn);
+    Database_create(conn);
     Database_write(conn);
     break;
 
@@ -171,7 +171,7 @@ int main(int argc, char *argv[])
   case 's':
     if(argc != 6) die("Need id, name, email to set");
 
-    Database_set(conn, id, agrv[4], argv[5]);
+    Database_set(conn, id, argv[4], argv[5]);
     Database_write(conn);
   break;
 
@@ -182,7 +182,7 @@ int main(int argc, char *argv[])
     Database_write(conn);
     break;
 
-  case 'i':
+  case 'l':
     Database_list(conn);
     break;
     default:
