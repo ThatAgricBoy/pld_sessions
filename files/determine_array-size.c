@@ -19,3 +19,4 @@ printf("Total array size in bytes: %d\n", maxsize);
 printf("The number of array elements is: %ld\n", nuumberofelement);
 }
 
+This is an addition of line
