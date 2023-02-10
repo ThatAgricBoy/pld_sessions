@@ -18,5 +18,6 @@ int main(void)
   struct Person person1 =
   {"Ada", "Lovelace", 28};
  struct Person person2 =
- {"Marie", "Curie", 44}; 
+ {"Marie", "Curie", 44};
+ printf("%s %s\n", person1.firstName, person2.lastName);
 }

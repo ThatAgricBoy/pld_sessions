@@ -10,10 +10,8 @@ int main()
   char s[] = "*";
   printf("%s\n", s);
   }
-for(int j = 0; j < strlen(p)/2; j++)
-{
-  p[j] = '#';
-  
+for(int j = 0; j < strlen(p); j++)
+{  
   printf("%s\n", p);
 }
 return 0;
