@@ -1,0 +1,3 @@
+#!/bin/bash
+mkdir pldtest23
+touch file1
